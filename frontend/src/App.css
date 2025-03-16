@@ -1,0 +1,222 @@
+/* Y2K Windows-style UI with blue hues */
+body {
+  background-color: #b3d9ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-image: linear-gradient(90deg, transparent 24%, #99ccff 25%, #99ccff 26%, transparent 27%, transparent 74%, #99ccff 75%, #99ccff 76%, transparent 77%),
+    linear-gradient(transparent 24%, #99ccff 25%, #99ccff 26%, transparent 27%, transparent 74%, #99ccff 75%, #99ccff 76%, transparent 77%);
+  background-size: 50px 50px;
+
+}
+
+.app-container {
+  background: #e6f2ff;
+  border: 3px solid #004080;
+  padding: 0px;
+  box-shadow: 5px 5px 0 #00264d;
+  width: 500px;
+  position: relative;
+}
+
+.window-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #004080;
+  color: #ffffff;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.window-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.window-buttons span {
+  width: 15px;
+  height: 15px;
+  background: #99ccff;
+  display: inline-block;
+  text-align: center;
+  line-height: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.window-buttons span:hover {
+  background: #ff6666;
+}
+
+.app-content {
+  padding: 0px 20px 20px;
+}
+
+h1 {
+  font-size: 20px;
+  color: #004080;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 70%;
+  padding: 5px;
+  border: 2px solid #004080;
+  background: #ffffff;
+}
+
+button {
+  padding: 5px 10px;
+  border: 2px solid #004080;
+  background: #99ccff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #004080;
+  color: #ffffff;
+}
+
+.email-list {
+  list-style: none;
+  padding: 0;
+}
+
+.email-list li {
+  background: #cce6ff;
+  border: 2px solid #004080;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.remove-btn {
+  background: #ff6666;
+  border: 2px solid #800000;
+  color: #ffffff;
+}
+
+.remove-btn:hover {
+  background: #800000;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pixel-heart {
+  display: grid;
+  grid-template-columns: repeat(5, 10px);
+  grid-template-rows: repeat(5, 10px);
+  gap: 2px;
+  justify-content: center;
+  margin: 0px 0px 20px
+}
+
+.pixel-heart div {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+}
+
+.pixel-heart .filled {
+  background-color: #004080;
+  box-shadow: 0 0 2px #003366;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+}
+
+.info-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+}
+
+.info-icon {
+  font-size: 18px;
+  height:25px;
+  width:25px;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.tooltip {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #fefefe;
+  color: #171717;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.info-container:hover .tooltip {
+  opacity: 1;
+}
+
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button:disabled {
+  background: #99ccff;
+  cursor: not-allowed;
+}
+
+
+/* Responsive Scaling */
+@media (max-width: 600px) {
+  .pixel-heart {
+    grid-template-columns: repeat(5, 8px);
+    grid-template-rows: repeat(5, 8px);
+  }
+
+  .pixel-heart div {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+
+@media (min-width: 340px) and (max-width: 700px) {
+  .app-container{
+    width:auto
+  }
+}
