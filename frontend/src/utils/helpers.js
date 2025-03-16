@@ -1,6 +1,6 @@
 const mode = "prod";    // local, dev, prod
-let APP_URL= `http://localhost:8000${sub_uri}`;
 const sub_uri = "/capture"
+let APP_URL= `http://localhost:8000${sub_uri}`;
 
 switch(mode){
     case "local":
